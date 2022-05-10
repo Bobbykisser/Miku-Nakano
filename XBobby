@@ -56,11 +56,11 @@ def get_readable_time(seconds: int) -> str:
 buttons = [
     [
                         InlineKeyboardButton(
-                             text="🏹 Summon Me",
-                             url="https://t.me/MikuXProBot?startgroup=true"),
+                             text="🏹 Add Me",
+                             url="https://t.me/bobby_robot?startgroup=true"),
                         InlineKeyboardButton(
-                             text="🗞️ Repo",
-                             url="https://github.com/h0daka/Miku-Nakano"),
+                             text="🦋OWNER🦋",
+                             url="https://t.me/aboutbobby"),
                     ],
                    [                  
                        InlineKeyboardButton(
@@ -68,20 +68,25 @@ buttons = [
                              callback_data="help_back"),
                         InlineKeyboardButton(
                              text=" 💫 About Me",
-                             callback_data="miku_"),
+                             callback_data="Bobby_"),
                     ], 
     ]
 
 
 HELP_STRINGS = """
-*Hey your {} is here!  
-*Main* commands available :
- • /help: PM's you this message.
- • /help <module name>: PM's you info about that module.
- • /settings:
-   • in PM: will send you your settings for all supported modules.
-   • in a group: will redirect you to pm, with all that chat's settings.
-For all command use /* [or](https://telegra.ph/file/85a404cf9edbd797c829f.jpg) *!*
+*𝐇ᴇʏ 𝐓ʜᴇʀᴇ...!  
+  
+ 『 𝐈ᴀᴍ ᴀʟᴏɴᴇ ʙᴏʏ x ʀᴏʙᴏᴛ🧚‍♀️ 』
+
+𝐁ᴀᴇ 𝐈ᴍ 𝐀 𝐏ᴏᴡᴇʀғᴜʟ 𝐆ʀᴏᴜᴘ 𝐌ᴀɴᴀɢᴇᴍᴇɴᴛ 𝐁ᴏᴛ 🤖 𝐈ᴍ 𝐁ᴜɪʟᴛ 𝐓ᴏ 𝐇ᴇʟᴘ 𝐘ᴏᴜʀ 𝐆ʀᴏᴜᴘ 𝐄ᴀsɪʟʏ😜
+
+┏ /start
+┃sᴛᴀʀᴛ ᴛʜᴇ ʙᴏᴛ
+┣/help
+┃ᴘᴍ's ʏᴏᴜ ᴛʜɪs ᴍᴇssᴀɢᴇ.
+┗ /settings
+╭─⊸➢ᴡɪʟʟ ʀᴇᴅɪʀᴇᴄᴛ ʏᴏᴜ ᴛᴏ ᴘᴍ, ᴡɪᴛʜ ᴀʟʟ ᴛʜᴀᴛ ᴄʜᴀᴛ's sᴇᴛᴛɪɴɢs.
+╰─⊸➢ᴊᴏɪɴ ꜱᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ ᴀɴᴅ ʀᴇᴘᴏʀᴛ ᴛʜᴇ ᴇʀʀᴏʀꜱ @love_u_bobby 🎀 * [or](https://telegra.ph/file/d851cef5fc7e2644264bf.jpg*!*
 """.format(
     dispatcher.bot.first_name,""
     if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\nKindly use ! for commands if / is not working\n")
@@ -99,7 +104,7 @@ CHAT_SETTINGS = {}
 USER_SETTINGS = {}
 
 for module_name in ALL_MODULES:
-    imported_module = importlib.import_module("MikuXProBot.modules." +
+    imported_module = importlib.import_module("bobbybot.modules." +
                                               module_name)
     if not hasattr(imported_module, "__mod_name__"):
         imported_module.__mod_name__ = imported_module.__name__
@@ -207,17 +212,17 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_photo(
-                random.choice(MIKU_IMG), TEXXT.format(mention_html(update.effective_user.id, update.effective_user.first_name)),
+                random.choice(https://telegra.ph/file/d851cef5fc7e2644264bf.jpg), TEXXT.format(mention_html(update.effective_user.id, update.effective_user.first_name)),
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [
                   [                  
                        InlineKeyboardButton(
                              text="🚑 Support",
-                             url=f"https://t.me/MikusSupport"),
+                             url=f"https://t.me/tamil_comrades_x"),
                        InlineKeyboardButton(
                              text="🛰️ Updates",
-                             url="https://t.me/MikuXUpdates")
+                             url="https://t.me/tamil_comrades_x")
                      ] 
                 ]
             ),
@@ -275,7 +280,7 @@ def help_button(update, context):
                 reply_markup=InlineKeyboardMarkup([[InlineKeyboardButton(text="Back",
                                        callback_data="help_back"),
                   InlineKeyboardButton(text="Support",
-                                       url="t.me/Mikussupport")]]))
+                                       url="t.me/tamil_comrades_x")]]))
 
         elif prev_match:
             curr_page = int(prev_match.group(1))
@@ -323,26 +328,26 @@ def miku_callback_data(update, context):
                  \n❍ I have a note keeping system, blacklists, and even predetermined replies on certain keywords.
                  \n❍ I check for admins' permissions before executing any command and more stuffs
                  \n❍ Miku licensed under the GNU General Public License v3.0
-                 \n❍ If you have any question about Miku, let us know at [Miku Support](t.me/{SUPPORT_CHAT}).""",
+                 \n❍ If you have any question about ALONE BOY, let us know at [OWNER](t.me/{ABOUTBOBBY}).""",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
                 [
                  [
-                    InlineKeyboardButton(text="🌏 My Master", url="t.me/h0daka"),
+                    InlineKeyboardButton(text="🌏 My Master", url="t.me/aboutbobby"),
                     InlineKeyboardButton(text="✨ Try Inline", switch_inline_query_current_chat="",),
                  ],
                  [
-                    InlineKeyboardButton(text="🕊️ Updates", url="t.me/MikuXUpdates"),
-                    InlineKeyboardButton(text="🚑 Support", url="t.me/Mikussupport"),
+                    InlineKeyboardButton(text="🕊️ Updates", url="t.me/tamil_comrades_x"),
+                    InlineKeyboardButton(text="🚑 Support", url="t.me/tamil_comrades_x"),
                  ],
                  [
-                    InlineKeyboardButton(text="❌ Back", callback_data="miku_back")
+                    InlineKeyboardButton(text="❌ Back", callback_data="alone_back")
                  ],
                 ]
             ),
         )
-    elif query.data == "miku_back":
+    elif query.data == "bobby_back":
         first_name = update.effective_user.first_name
         query.message.edit_text(
                 PM_START_TEXT.format(
@@ -382,7 +387,7 @@ def get_help(update: Update, context: CallbackContext):
             reply_markup=InlineKeyboardMarkup(
                 [
                   [
-                  InlineKeyboardButton(text=" Click here", url="https://t.me/MikuXProBot?start=help")
+                  InlineKeyboardButton(text=" Click here", url="https://t.me/bobbyrobot?start=help")
                   ]
                 ]
             ),
@@ -399,7 +404,7 @@ def get_help(update: Update, context: CallbackContext):
                 [[InlineKeyboardButton(text="Back",
                                        callback_data="help_back"),
                   InlineKeyboardButton(text="Support",
-                                       url="t.me/Mikussupport")]]))
+                                       url="t.me/tamil_comrades_x")]]))
 
     else:
         send_help(chat.id, HELP_STRINGS)
@@ -523,7 +528,7 @@ def get_settings(update: Update, context: CallbackContext):
         if is_user_admin(chat, user.id):
             text = "Click here to get this chat's settings, as well as yours."
             msg.reply_photo(
-                random.choice(MIKU_N_IMG), caption=text,
+                random.choice(https://telegra.ph/file/d851cef5fc7e2644264bf.jpg), caption=text,
                 reply_markup=InlineKeyboardMarkup([[
                     InlineKeyboardButton(
                         text="Settings",
@@ -548,7 +553,7 @@ def donate(update: Update, context: CallbackContext):
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True)
 
-        if OWNER_ID != 5291415314 and DONATION_LINK:
+        if OWNER_ID != 5299049743 and DONATION_LINK:
             update.effective_message.reply_text(
                 "You can also donate to the person currently running me "
                 "[here]({})".format(DONATION_LINK),
@@ -597,8 +602,8 @@ def main():
                 [
                   [                  
                        InlineKeyboardButton(
-                             text="[► Summon Me◄]",
-                             url="https://t.me/MikuXProBot?startgroup=true")
+                             text="[►Add Me◄]",
+                             url="https://t.me/bobbyrobot?startgroup=true")
                      ] 
                 ]
             ),
@@ -620,7 +625,7 @@ def main():
     settings_callback_handler = CallbackQueryHandler(
         settings_button, pattern=r"stngs_")
 
-    about_callback_handler = CallbackQueryHandler(miku_callback_data, pattern=r"miku_")
+    about_callback_handler = CallbackQueryHandler(miku_callback_data, pattern=r"alone_")
     donate_handler = CommandHandler("donate", donate)
     migrate_handler = MessageHandler(Filters.status_update.migrate,
                                      migrate_chats)
